@@ -1,0 +1,50 @@
+@startuml herança
+
+title Exercicio Dois
+
+class Pessoa {
+    - nome: String
+    - nascimento: Intenger
+    - cpf: Intenger
+    - endereco: String
+    + construtor(nome, nascimento, cpf, endereco)
+    + validar(cpf)
+}
+
+class Veiculo {
+    - marca: String
+    - cor: String
+    - placa: String
+    - ano: Intenger
+    - modelo: String
+    - registro: Intenger
+    + construtor(Pessoa,marca, cor, placa, ano, modelo, registro)
+    + validar(registro)
+}
+
+class Carro {
+    - extintor: Boolean
+    - console_usb: Boolean
+    - airbag: Boolean
+    + construtor(Veiculo, extintor, console_usb airbag,)
+    + validar(registro)   
+}
+
+class Moto {
+    - bau: Boolean
+    - corta_pipa: Boolean
+    + construtor(Veiculo, bau, corta_pipa)
+}
+
+class Lancha {
+    - colete_salva_vidas: Boolean
+    - registro_cais: String
+    - licenca_marinha: String
+    + construtor(Veiculo, colete_salva_vidas, registro_cais, licenca_marinha)
+    + validar(licenca_marinha)
+}
+
+Pessoa <|-- Veiculo
+Veiculo <|-- Carro
+Veiculo <|-- Moto
+Veiculo <|-- Lancha
